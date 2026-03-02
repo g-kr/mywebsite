@@ -92,4 +92,4 @@ contact.addEventListener('click', () => {
     mount: contactContent,
     ...windowOptions
   });
-});
+}); 
