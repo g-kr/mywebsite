@@ -8,29 +8,32 @@
 
 :root {
   --text-color: #00aa00;
+  --bg-color: #333;
+  --window-bg: #111;
 }
 
 body {
   font-family: 'Roboto Mono', sans-serif;
-  background-color: #333;
+  background-color: var(--bg-color);
   color: #ccc;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6;
 }
 
 h1 {
   color: var(--text-color);
-  font-size: 50px;
-  letter-spacing: -5px;
+  font-size: 45px;
+  letter-spacing: -3px;
   margin-bottom: 20px;
 }
 
-h2 {
+h2, h3 {
   color: var(--text-color);
 }
 
 h3 {
   margin-bottom: 10px;
+  margin-top: 15px;
 }
 
 ul {
@@ -42,50 +45,81 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 p {
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 nav {
-  width: 30%;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 2rem;
 }
 
 nav ul {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
+  gap: 10px;
 }
 
 nav ul li {
   color: var(--text-color);
   cursor: pointer;
-  padding-left: 5px;
-  padding-right: 5px;
+  transition: color 0.2s;
+}
+
+nav ul li:hover {
+  color: #fff;
+}
+
+hr {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--text-color);
+  margin-top: 15px;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
 }
 
 .container {
-  max-width: 600px;
+  max-width: 700px;
   margin: auto;
-  height: 70vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding: 0 20px;
 }
 
 .wb-body {
-  background: #111;
+  background: var(--window-bg);
   padding: 20px;
+  color: #ccc;
+  font-family: 'Roboto Mono', sans-serif;
+  overflow-y: auto;
+}
+
+.wb-body ul {
+  list-style-type: square;
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.wb-body li {
+  margin-bottom: 8px;
 }
 
 .hidden {
   display: none;
-}
-#hr{
-  width: 200%;
-  margin-left: -5rem;
-  margin-top: 1rem;
-
 }
 
 .cursor {
@@ -94,12 +128,6 @@ nav ul li {
 }
 
 @keyframes blink {
-  from,
-  to {
-    color: transparent;
-  }
-
-  50% {
-    color: var(--text-color);
-  }
+  from, to { color: transparent; }
+  50% { color: var(--text-color); }
 }
